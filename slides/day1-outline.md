@@ -76,11 +76,15 @@ UNO Q = สองสมองในบอร์ดเดียว
 
 → ต่างจาก Arduino ทั่วไป
 → Powered by Qualcomm Dragonwing
+→ ใช้ Linux side ตอน setup / connect / ทำงานกับ Edge Impulse
+→ ใช้ MCU side ตอนอ่าน sensor และคุม output แบบทันที
 ```
 
 <a href="https://www.arduino.cc/product-uno-q/">
         <img src="https://arduino.cc/cdn-cgi/image/width=2048,quality=60,format=auto/https://www.datocms-assets.com/150482/1769011155-img.png" alt="Arduino UNO Q board" width="360" />
 </a>
+
+<img src="../assets/uno-q-dual-brain.svg" alt="Diagram explaining Linux side and MCU side roles on Arduino UNO Q" width="720" />
 
 ---
 
