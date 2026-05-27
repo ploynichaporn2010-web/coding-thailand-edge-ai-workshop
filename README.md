@@ -96,7 +96,7 @@ coding-thailand-edge-ai-workshop/
 
 ## 🧑‍🏫 สำหรับครู/ผู้จัด
 
-ถ้าคุณกำลังใช้ repo นี้เพื่อเตรียม session:
+เวลาเตรียม session ให้เริ่มจาก:
 
 1. เช็คอุปกรณ์จาก [docs/00-equipment-checklist.md](docs/00-equipment-checklist.md)
 2. ปรับ [docs/01-schedule.md](docs/01-schedule.md) และ [slides/day1-outline.md](slides/day1-outline.md) ให้ตรงกับบริบทของห้อง

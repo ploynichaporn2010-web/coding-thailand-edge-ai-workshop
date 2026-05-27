@@ -7,7 +7,7 @@
 > **Output:** Modulino Pixels + Buzzer + LED Matrix
 > **Difficulty:** ⭐⭐⭐ Advanced (sensitive to noise)
 
-ใช้ไฟล์นี้เป็นคู่มือทำ Track D แบบระวังเรื่องเสียงรบกวนเป็นพิเศษ: ถ้า data ชุดแรก noisy เกินไป V1 จะเพี้ยนทั้งก้อนและเสียเวลา iterate มาก
+Track นี้เหมาะกับทีมที่อยากทำงานกับเสียงและพร้อมจัดการเรื่อง noise อย่างจริงจัง
 
 ---
 

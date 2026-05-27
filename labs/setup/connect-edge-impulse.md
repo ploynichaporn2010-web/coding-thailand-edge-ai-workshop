@@ -3,7 +3,7 @@
 
 # 🔌 Connect Edge Impulse to UNO Q
 
-> ใช้ไฟล์นี้ตอนทีมกำลังพา UNO Q เข้า Edge Impulse เป็นครั้งแรก ถ้าติดตรงไหนให้ทำตามลำดับและเช็กทีละ step
+> เชื่อม UNO Q ให้ขึ้นใน Edge Impulse Studio และทดสอบ data flow ให้ผ่านก่อนเริ่ม lab ของ track
 
 ---
 
@@ -11,7 +11,7 @@
 
 UNO Q เป็นบอร์ดสองสมอง — เราจะใช้ **Linux side** เป็น Edge Impulse device
 
-เป้าหมายของไฟล์นี้คือให้ทีมเชื่อมบอร์ด, login, และเห็น data flow เข้า Edge Impulse Studio ได้จริง
+เป้าหมายคือให้ทีมเชื่อมบอร์ด, login, และเห็น data flow เข้า Edge Impulse Studio ได้จริง
 
 ---
 

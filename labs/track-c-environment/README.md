@@ -7,7 +7,7 @@
 > **Output:** Modulino Pixels + Buzzer
 > **Difficulty:** ⭐⭐⭐ Advanced concept (multi-sensor fusion)
 
-ไฟล์นี้เหมาะกับทีมที่อยากทำระบบจากหลาย sensor พร้อมกัน ให้ใช้เป็นคู่มือเช็กว่าทีมวาง class และเลือก sensor ได้เหมาะกับโจทย์จริงหรือยัง
+Track นี้เหมาะกับทีมที่อยากลอง multi-sensor fusion และพร้อมอธิบายว่า sensor แต่ละตัวช่วยแยก class ยังไง
 
 ---
 

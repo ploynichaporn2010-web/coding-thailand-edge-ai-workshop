@@ -3,7 +3,7 @@
 
 # 🚀 GitHub Setup Guide สำหรับผู้จัด Workshop
 
-> ไฟล์นี้เป็นมุมของผู้จัดโดยตรง และอ้างอิง flow ปัจจุบันของ repo นี้: เก็บ team template ไว้ในโฟลเดอร์ `templates/team-repo-template/`
+> คู่มือนี้สำหรับผู้จัด workshop และอ้างอิง flow ปัจจุบันของ repo นี้: เก็บ team template ไว้ในโฟลเดอร์ `templates/team-repo-template/`
 
 ---
 
