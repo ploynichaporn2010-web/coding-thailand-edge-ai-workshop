@@ -1,11 +1,11 @@
 <!-- workshop-header -->
 <img width="1347" height="127" alt="Coding Thailand 2026 header" src="https://github.com/user-attachments/assets/ba5cf267-f460-4fb0-b69b-c461ae061a3b" />
 
-# 🎨 Day 1 Slide Outline
+# 🎨 Day 1 Teaching Slides
 
-> **25 สไลด์สำหรับช่วง opening** — ใช้กับช่วง opening (09:00-09:30) + transitions
+> **25 สไลด์พร้อมใช้สำหรับ Day 1** — ใช้กับช่วง opening (09:00-09:30) และช่วง transition ตลอดวัน
 >
-> ไฟล์นี้คือ structure สำหรับนำไปสร้าง slide จริงใน Canva/PowerPoint/Google Slides
+> คัดลอกหัวข้อและข้อความแต่ละบล็อกไปวางใน Canva/PowerPoint/Google Slides ได้ทันที
 
 ---
 
@@ -15,7 +15,7 @@
 **Coding Thailand 2026 — Edge AI Workshop**
 *Arduino UNO Q × Modulino × Edge Impulse*
 
-- ชื่อวิทยากร, ตำแหน่ง
+- ชื่อ session / ชื่อผู้นำช่วง
 - โลโก้ DEPA, Coding Thailand
 - วันที่
 
@@ -144,7 +144,7 @@ Sensor: Modulino Movement (IMU)
 Output: Modulino Pixels (สีตามคลาส)
 ```
 
-วิทยากร switch ไป live demo
+สลับไป live demo
 
 ---
 
@@ -221,7 +221,7 @@ UNO Q → Movement → Pixels → Buzzer
 ```
 ทีมทำพร้อมกัน:
 
-1. สร้าง repo ทีมใหม่จาก template ที่ครูให้
+1. สร้าง repo ทีมใหม่จาก template ที่แชร์ไว้
 2. Clone ลง laptop
 3. แก้ README ใส่ชื่อทีม
 4. Commit + Push แรก
@@ -292,7 +292,7 @@ AI จะเรียนรู้: "แสง = ตัวแยกคลาส"
 ✅ Diverse      — หลาย environment, มุม, แสง
 ✅ Representative — ใกล้กับที่ deploy จริง
 
-ทดสอบ: "ถ้าครูคนอื่นใช้ — ยังทำงานได้ไหม?"
+ทดสอบ: "ถ้าคนอื่นลองใช้ — ยังทำงานได้ไหม?"
 ```
 
 ---
@@ -404,7 +404,7 @@ Submission Checklist:
 
 ---
 
-## 🎨 Design Notes สำหรับสร้าง Slide จริง
+## 🎨 องค์ประกอบเวลาเอาไปทำสไลด์จริง
 
 - **Theme color:** ตามโลโก้ Coding Thailand (เหลือง + ดำ + ขาว)
 - **Font:** Sans-serif อ่านง่ายในระยะไกล (Inter / Roboto / Sukhumvit Set)
@@ -412,9 +412,9 @@ Submission Checklist:
 - **Images:** ภาพ Modulino, UNO Q จริง — เอาจาก https://store.arduino.cc/
 - **Diagrams:** ใช้ Excalidraw หรือ Mermaid
 
-## 📦 Export ไป Canva/Slides
+## 📦 เอาไปทำต่อใน Canva/Slides
 
 แนะนำให้:
-1. Copy outline นี้
+1. Copy deck นี้
 2. ใช้ AI (เช่น Canva Magic Design หรือ Gamma) ช่วย generate ครั้งแรก
 3. ปรับแต่งให้ตรงกับ branding ของ workshop
