@@ -7,6 +7,8 @@
 > **Output:** Modulino Pixels + Buzzer
 > **Difficulty:** ⭐ ง่ายที่สุด เหมาะกับมือใหม่
 
+ใช้ไฟล์นี้เป็น checklist ระหว่างทำ Track A: อ่านทีละ step, ทำตามลำดับ, แล้วเช็กว่าทีมได้ output ของแต่ละช่วงจริงก่อนขยับไปขั้นถัดไป
+
 ---
 
 ## 🎓 ทำไมเลือก Track A
@@ -43,6 +45,12 @@
 
 ## 🛠️ Lab Steps
 
+## ✅ ก่อนเริ่ม track นี้ ทีมควรมี
+
+- repo ทีมพร้อมใช้งานและมี commit แรกแล้ว
+- Worksheet W1 ที่นิยาม class ชัดพอให้เริ่มเก็บข้อมูล
+- UNO Q + Modulino Movement + Pixels + Buzzer ต่อครบและเปิดติด
+
 ### Step 1: Hardware Setup (5 นาที)
 
 ```
@@ -67,6 +75,8 @@ UNO Q ─Qwiic─→ Movement ─Qwiic─→ Pixels ─Qwiic─→ Buzzer
 4. Connect device:
    - UNO Q terminal: `edge-impulse-linux`
    - Login + เลือก project
+
+จบ step นี้แล้ว ทีมควรเห็น device ของตัวเองใน Edge Impulse Studio
 
 ---
 
@@ -96,6 +106,8 @@ UNO Q ─Qwiic─→ Movement ─Qwiic─→ Pixels ─Qwiic─→ Buzzer
 | Intermediate (4 classes) | 60 | ~50 นาที |
 | Advanced (4 classes) | 80 | ~60 นาที |
 
+ก่อนไป step 4 ให้เช็กสั้น ๆ ว่าแต่ละ class มีจำนวนใกล้กันและทีมไม่ได้เก็บจากคนเดียวหรือความเร็วเดียวทั้งหมด
+
 ---
 
 ### Step 4: Create Impulse (10 นาที)
@@ -121,6 +133,8 @@ UNO Q ─Qwiic─→ Movement ─Qwiic─→ Pixels ─Qwiic─→ Buzzer
    ```
    กด Save & train (รอ 1-2 นาที)
 
+เป้าหมายของ step นี้ไม่ใช่ accuracy สูงสุดทันที แต่คือการได้ V1 ที่พอทดสอบบนเคสจริงได้
+
 ---
 
 ### Step 5: Validate (5 นาที)
@@ -140,6 +154,8 @@ C   1   3 [42]         C    7 11  [25]
 **ถ้า accuracy < 70% → กลับไปดู data**
 **ถ้า accuracy > 95% → ระวัง overfitting**
 
+อย่าเพิ่งดีใจกับตัวเลขใน Studio ถ้ายังไม่ได้ลองกับคนหรือท่าที่ไม่ได้อยู่ใน data train
+
 ---
 
 ### Step 6: Deploy to UNO Q (10 นาที)
@@ -155,6 +171,8 @@ C   1   3 [42]         C    7 11  [25]
    - Run
 
 5. **Test inference** บนบอร์ดจริง
+
+ถ้ารันได้แต่ตอบช้า หรือทำนายไม่ตรงกับสิ่งที่เพิ่งทำ ให้ถือว่ายังไม่จบ step นี้
 
 ---
 
@@ -183,6 +201,8 @@ C   1   3 [42]         C    7 11  [25]
 4. Test เคสเดิม + เคสใหม่
 
 📝 เขียนเปรียบเทียบใน `docs/v1-vs-v2.md`
+
+V2 ที่ดีไม่จำเป็นต้อง accuracy สูงสุดเสมอ แต่ควรอธิบายได้ว่าปรับอะไรและเพราะอะไร
 
 ---
 

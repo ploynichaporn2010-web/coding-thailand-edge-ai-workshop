@@ -3,7 +3,7 @@
 
 # 🚀 GitHub Setup Guide สำหรับผู้จัด Workshop
 
-> วิธีนำ repo นี้ขึ้น GitHub และเตรียมให้ทีมนักเรียน fork
+> ไฟล์นี้เป็นมุมของผู้จัดโดยตรง และอ้างอิง flow ปัจจุบันของ repo นี้: เก็บ team template ไว้ในโฟลเดอร์ `templates/team-repo-template/`
 
 ---
 
@@ -18,9 +18,9 @@
 5. **Initialize:** ☐ ไม่ต้องติ๊ก (เราจะ push เอง)
 6. กด **Create repository**
 
-### Option B: Fork จาก template (ถ้ามีต้นแบบ)
+### Option B: ใช้ repo ที่มีอยู่แล้วเป็นฐาน
 
-ถ้าคุณได้รับ URL repo template → กด Fork ที่มุมขวาบน
+ถ้าคุณมี workshop repo อยู่แล้ว ให้ push เพิ่มเติมจากเครื่องของคุณเข้า repo เดิมได้เลย
 
 ---
 
@@ -45,15 +45,27 @@ git push -u origin main
 
 ---
 
-## Step 3: ตั้งเป็น Template Repository
+## Step 3: เลือกวิธีแจก Team Template
 
-ให้ทีมนักเรียน **"Use this template"** ได้ง่ายๆ:
+### วิธีที่ใช้ได้ทันทีใน repo นี้
 
-1. ใน GitHub → repo ของคุณ → **Settings**
-2. หน้า General → ติ๊ก ☑ **Template repository**
-3. Save
+ให้นักเรียนสร้าง repo ใหม่ของทีม แล้วคัดลอกไฟล์จาก `templates/team-repo-template/` ไปใส่ repo ของตัวเอง
 
-ทำให้นักเรียนกดปุ่ม **"Use this template"** เห็นได้ทันที (ดีกว่า fork สำหรับ workshop)
+ข้อดี:
+- ใช้ได้ทันที ไม่ต้องแยก repo ใหม่
+- โครงสร้างทีมอยู่ใน repo เดียวกับ workshop materials
+
+### ถ้าอยากได้ปุ่ม "Use this template" จริง
+
+แยก `templates/team-repo-template/` ออกเป็น repo ใหม่ แล้วค่อยตั้ง repo นั้นเป็น GitHub template repository:
+
+1. สร้าง repo ใหม่สำหรับ template ทีมโดยเฉพาะ
+2. copy ไฟล์จาก `templates/team-repo-template/` ไปใส่
+3. ใน GitHub → repo นั้น → **Settings**
+4. หน้า General → ติ๊ก ☑ **Template repository**
+5. Save
+
+วิธีนี้เหมาะถ้าคุณจะใช้ workshop นี้หลายรอบและอยากให้ onboarding เร็วขึ้น
 
 ---
 
@@ -90,8 +102,8 @@ git push -u origin main
 https://github.com/YOUR_USERNAME/coding-thailand-edge-ai-workshop
 
 📋 Team Repo Template:
-ใน workshop ทีมจะ Use this template เพื่อสร้าง repo ของตัวเอง
-ตั้งชื่อตามรูปแบบ: edge-ai-team-XX (เช่น edge-ai-team-01)
+ใน workshop ทีมจะเปิดโฟลเดอร์ templates/team-repo-template/
+แล้วสร้าง repo ของตัวเองชื่อ edge-ai-team-XX (เช่น edge-ai-team-01)
 ```
 
 ---
@@ -101,12 +113,10 @@ https://github.com/YOUR_USERNAME/coding-thailand-edge-ai-workshop
 สร้าง demo team repo เป็นตัวอย่าง:
 
 ```bash
-# ใช้ template
-gh repo create demo-team --template YOUR_USERNAME/coding-thailand-edge-ai-workshop \
-  --public --clone
+# สร้าง repo ว่างก่อน
+gh repo create demo-team --public --clone
 
-# หรือผ่าน UI:
-# กด "Use this template" → ตั้งชื่อ demo-team
+# จากนั้น copy ไฟล์ใน templates/team-repo-template ไปใส่ demo-team
 ```
 
 แล้วทำ:
@@ -123,12 +133,12 @@ gh repo create demo-team --template YOUR_USERNAME/coding-thailand-edge-ai-worksh
 ก่อนถึงวัน Workshop:
 
 - [ ] Repo ขึ้น GitHub แล้ว
-- [ ] ตั้งเป็น Template ☑
+- [ ] ตกลงแล้วว่าจะใช้ subfolder template หรือ template repo แยก
 - [ ] Discussions เปิด ☑
 - [ ] URL ส่งให้ทีมแล้ว
 - [ ] Demo team repo มีตัวอย่าง
-- [ ] ทุก TA fork repo + clone ลงเครื่อง
-- [ ] ทดสอบ flow: ทีม template → ทีมสร้าง repo ใหม่ → push commit แรกได้
+- [ ] ทุก TA clone repo ลงเครื่อง
+- [ ] ทดสอบ flow: เปิด team-repo-template → สร้าง repo ทีมใหม่ → push commit แรกได้
 
 ---
 
@@ -152,8 +162,9 @@ gh repo create demo-team --template YOUR_USERNAME/coding-thailand-edge-ai-worksh
 ### 09:30-09:45 — Setup ทีม
 ```
 ครูพูด: "ทุกทีมไปที่ URL workshop repo"
-ครูพูด: "กดปุ่ม 'Use this template' มุมขวาบน"
-ครูพูด: "ตั้งชื่อ edge-ai-team-XX, public, กด Create"
+ครูพูด: "เปิดโฟลเดอร์ templates/team-repo-template"
+ครูพูด: "สร้าง repo ใหม่ชื่อ edge-ai-team-XX, public"
+ครูพูด: "คัดลอกไฟล์ template ไปใส่ repo ทีม"
 ครูพูด: "Clone ลง laptop ตามคำสั่งใน docs/04-git-basics.md"
 ```
 
@@ -194,7 +205,7 @@ git push origin day1-final
 → แนะนำให้ใช้ GitHub CLI: `gh auth login`
 
 ### นักเรียนเผลอ commit dataset ใหญ่
-→ มี .gitignore ใน template แล้ว แต่ย้ำตอน Git 101
+→ มี .gitignore ใน team template แล้ว แต่ย้ำตอน Git 101
 
 ### ทีม merge conflict
 → มีใน troubleshooting guide แล้ว

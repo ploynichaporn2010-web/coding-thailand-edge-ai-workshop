@@ -3,13 +3,15 @@
 
 # 🔌 Connect Edge Impulse to UNO Q
 
-> สำหรับช่วง 09:30-10:00 — ครู/TA ใช้สอน setup
+> ใช้ไฟล์นี้ตอนทีมกำลังพา UNO Q เข้า Edge Impulse เป็นครั้งแรก ถ้าติดตรงไหนให้ทำตามลำดับและเช็กทีละ step
 
 ---
 
 ## Overview
 
 UNO Q เป็นบอร์ดสองสมอง — เราจะใช้ **Linux side** เป็น Edge Impulse device
+
+เป้าหมายของไฟล์นี้คือให้ทีมเชื่อมบอร์ด, login, และเห็น data flow เข้า Edge Impulse Studio ได้จริง
 
 ---
 
@@ -18,6 +20,8 @@ UNO Q เป็นบอร์ดสองสมอง — เราจะใช
 1. เสียบ USB-C เข้า UNO Q + power adapter (5V/3A)
 2. รอ ~30 วินาทีให้ Linux boot
 3. ดู LED indicator → ติดต่อเนื่อง = พร้อมใช้
+
+ถ้าบอร์ดยังไม่พร้อมใน step นี้ อย่าเพิ่งข้ามไป Wi-Fi หรือ CLI เพราะจะทำให้ debug ยากขึ้น
 
 ---
 
@@ -41,6 +45,8 @@ adb shell
 sudo nmcli device wifi connect "SSID" password "PASSWORD"
 ```
 
+ถ้าทีมต้องการแค่ใช้งานให้ทันช่วงเช้า ให้เลือก Method A ก่อน แล้วค่อยใช้ Method B เมื่อจำเป็น
+
 ---
 
 ## Step 3: SSH เข้า UNO Q
@@ -54,6 +60,8 @@ ssh arduino@<IP>
 ```
 
 > ⚠️ ถ้า password ผิด → reset ผ่าน `adb shell sudo passwd arduino`
+
+จบ step นี้แล้ว ทีมควรมี shell ที่เข้า UNO Q ได้จริงอย่างน้อย 1 ช่องทาง
 
 ---
 
@@ -77,6 +85,8 @@ sudo npm install edge-impulse-linux -g --unsafe-perm
 ```
 
 ⏱️ ใช้เวลา ~5-10 นาที (ขึ้นกับ network)
+
+ถ้า CLI ติดตั้งช้าผิดปกติ ให้เช็ก network ก่อนลงลึกกับคำสั่งอื่น
 
 ---
 
@@ -107,6 +117,8 @@ edge-impulse-linux
 
 ✅ จะเห็นข้อความ "Your device is now connected to Edge Impulse"
 
+ถ้ายังไม่เห็นข้อความนี้ ให้ถือว่ายังไม่จบ setup และอย่าเพิ่งไปเก็บ data ใน Studio
+
 ---
 
 ## Step 7: ทดสอบ Data Acquisition
@@ -116,6 +128,8 @@ edge-impulse-linux
 2. Data acquisition → Start sampling
 3. เลือก sensor / camera / microphone
 4. กด Start → เห็น data flow มาจาก UNO Q ✓
+
+นี่คือ checkpoint สำคัญที่สุดของไฟล์นี้: ถ้า data ยังไม่ไหลเข้า Studio ให้แก้ตรงนี้ก่อนเริ่ม lab ของ track
 
 ---
 
@@ -176,7 +190,7 @@ to a 32-bit operating system running on a 64-bit CPU."
 - 5 นาที: Login Edge Impulse
 - 5 นาที: Test data acquisition
 
-ถ้าทีมไหนใช้เกิน 30 นาที → ให้ TA ช่วย / ใช้ pre-flashed UNO Q สำรอง
+ถ้าทีมใช้เกิน 30 นาทีแล้วยังไม่เห็น data ใน Studio ให้เรียก TA พร้อมบอกว่าไปค้างที่ step ไหนและลองอะไรมาแล้วบ้าง
 
 ---
 

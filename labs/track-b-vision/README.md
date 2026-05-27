@@ -7,6 +7,8 @@
 > **Output:** Modulino Pixels + LED Matrix + Buzzer
 > **Difficulty:** ⭐⭐ ปานกลาง
 
+ใช้ไฟล์นี้เป็นคู่มือทำ Track B แบบทีละช่วง: setup กล้องให้ได้ก่อน, เก็บภาพให้หลากหลายพอ, แล้วค่อยดูว่า model ใช้ได้จริงกับรูปใหม่ไหม
+
 ---
 
 ## 🎓 ทำไมเลือก Track B
@@ -16,6 +18,8 @@
 - ✅ เชื่อม Computer Vision concept
 
 ⚠️ **ต้องมี:** USB Webcam + USB Hub (powered) — เช็คก่อนเลือก track นี้
+
+ถ้าทีมยังไม่มีกล้องหรือ powered hub ครบ ให้เปลี่ยน track ตั้งแต่ต้นจะคุ้มกว่าฝืนแก้ hardware กลางวัน
 
 ---
 
@@ -42,6 +46,12 @@
 ---
 
 ## 🛠️ Lab Steps
+
+## ✅ ก่อนเริ่ม track นี้ ทีมควรมี
+
+- repo ทีมพร้อมใช้งานและมี commit แรกแล้ว
+- worksheet W1 ที่กำหนด class ชัดเจนและไม่ซ้อนกันเกินไป
+- USB Webcam หรือวิธีเก็บภาพทางเลือกที่ทีมตกลงกันแล้ว
 
 ### Step 1: Hardware Setup (10 นาที)
 
@@ -70,6 +80,8 @@ ls /dev/video*
 2. ตั้งชื่อ `team-XX-vision`
 3. Project info → Target = **Arduino UNO Q**
 4. Project info → Input = **Images**
+
+จบ step นี้แล้ว ทีมควรเห็น project ถูกตั้งเป็นภาพและพร้อมรับ data เข้า train set/test set
 
 ---
 
@@ -111,6 +123,8 @@ ls /dev/video*
 - 🎨 2+ background
 - 📏 2+ ระยะห่าง
 
+ถ้าทีมมีภาพสวยแต่ถ่ายมุมเดิม แสงเดิม พื้นหลังเดิมหมด ให้ถือว่ายังเก็บข้อมูลไม่พอสำหรับใช้จริง
+
 ---
 
 ### Step 4: Create Impulse (10 นาที)
@@ -134,6 +148,8 @@ ls /dev/video*
 
 ⚠️ ถ้าเลือก model ใหญ่กว่านี้ → **จะไม่ลง UNO Q ได้**
 
+เป้าหมายของ V1 คือได้ baseline ที่นำไปทดสอบกับรูปที่ไม่เคยเห็นมาก่อน ไม่ใช่แต่งตัวเลขใน train set
+
 ---
 
 ### Step 5: Validate (10 นาที)
@@ -143,6 +159,8 @@ ls /dev/video*
 **Sanity check:** ใช้รูปใหม่ที่ไม่ได้ train
 - ถ้า Live classification ตรง → ดี
 - ถ้าผิด → overfit หรือ training data ไม่ดี
+
+ถ้าความผิดพลาดเกิดเฉพาะในแสงต่ำหรือ background ใหม่ นั่นคือสัญญาณว่าทีมควรกลับไปเก็บ variation เพิ่ม
 
 ---
 
@@ -195,6 +213,8 @@ edge-impulse-linux-runner
 3. (ถ้าจำเป็น) แก้ class definition
 4. Re-train V2
 5. Test เปรียบเทียบ
+
+อย่าปรับหลายอย่างพร้อมกันถ้าไม่จำเป็น เพราะจะอธิบายยากว่าจริง ๆ แล้วอะไรทำให้ V2 ดีขึ้น
 
 ---
 

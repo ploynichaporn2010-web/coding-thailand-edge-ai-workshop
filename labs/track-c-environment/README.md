@@ -7,6 +7,8 @@
 > **Output:** Modulino Pixels + Buzzer
 > **Difficulty:** ⭐⭐⭐ Advanced concept (multi-sensor fusion)
 
+ไฟล์นี้เหมาะกับทีมที่อยากทำระบบจากหลาย sensor พร้อมกัน ให้ใช้เป็นคู่มือเช็กว่าทีมวาง class และเลือก sensor ได้เหมาะกับโจทย์จริงหรือยัง
+
 ---
 
 ## 🎓 ทำไมเลือก Track C
@@ -39,6 +41,12 @@
 
 ## 🛠️ Lab Steps
 
+## ✅ ก่อนเริ่ม track นี้ ทีมควรมี
+
+- repo ทีมพร้อมใช้งานและมี commit แรกแล้ว
+- W1 ที่ระบุชัดว่าแต่ละ class ต่างกันเพราะ signal ไหน
+- ทีมเข้าใจว่าจะใช้ sensor อะไรบ้าง ไม่จำเป็นต้องใช้ทุกตัวถ้าโจทย์ไม่ต้องการ
+
 ### Step 1: Hardware Setup (5 นาที)
 
 ```
@@ -57,6 +65,8 @@ int distance = distance.getDistance();
 ```
 
 ดูค่าใน Serial Monitor ก่อนเริ่ม
+
+จบ step นี้แล้ว ทีมควรพอมองออกว่าค่า sensor เปลี่ยนยังไงเวลา environment เปลี่ยนจริง
 
 ---
 
@@ -81,6 +91,8 @@ int distance = distance.getDistance();
 #### เป้าหมาย: 200 samples/class
 
 **ทำไมต้องเยอะกว่า track อื่น:** เพราะ sensor data dense + variation ในชีวิตจริงเยอะ
+
+ถ้าทีมยังอธิบายไม่ได้ว่า class ไหนพึ่งพา sensor ตัวไหนเป็นหลัก ให้หยุดกลับไปทบทวน W1 ก่อนเก็บเยอะ
 
 #### Data Collection Strategy:
 
@@ -117,6 +129,8 @@ int distance = distance.getDistance();
 
 💡 **Tip:** Multi-sensor data มักต้องการ epochs เยอะกว่า (50 vs 30)
 
+เป้าหมายของ V1 คือเห็นว่าข้อมูลจากหลาย sensor ช่วยแยก class ได้จริง ไม่ใช่ใส่ sensor เยอะไว้ก่อนโดยไม่รู้ว่าตัวไหนมีประโยชน์
+
 ---
 
 ### Step 5: Validate (5 นาที)
@@ -124,6 +138,8 @@ int distance = distance.getDistance();
 ดู Confusion Matrix
 - ถ้าทุก class ระบุได้ → ดี
 - ถ้า class ที่ "อยู่ติดกัน" (เช่น เปิดสั้น vs เปิดทิ้ง) สับสน → ต้องเพิ่ม sample ของช่วง boundary
+
+เวลาวิเคราะห์ ให้ดูด้วยว่าความสับสนเกิดจาก class definition แคบเกินไป หรือเกิดจาก sensor ที่เลือกยังไม่พอ
 
 ---
 
@@ -166,6 +182,8 @@ Multi-sensor มักมี "weight" ที่ต่างกัน:
 1. Remove sensor ที่ไม่ contribute → simpler model
 2. หรือ add sensor ใหม่ที่ track ไม่ได้คิดถึง
 3. เปรียบเทียบ V1 vs V2
+
+ยิ่งทีมอธิบายได้ชัดว่า sensor ไหนช่วยจริง V2 ของทีมจะยิ่งน่าเชื่อถือเวลา demo
 
 ---
 

@@ -36,7 +36,7 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    T[Team forms] --> R[Fork Template Repo]
+    T[Team forms] --> R[Create Team Repo]
     R --> S[Setup UNO Q + Edge Impulse]
     S --> W1[W1: Class Design]
     W1 --> D[Data Collection]

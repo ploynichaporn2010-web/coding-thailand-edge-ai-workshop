@@ -66,13 +66,15 @@ git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-### Step 4: Fork Template Repo
+### Step 4: สร้าง repo ทีมจาก Team Repo Template
 
 1. ไปที่ repo ของ workshop (ลิงก์จากครู)
-2. กดปุ่ม **Fork** มุมขวาบน
-3. ใน account ของทีม → กด **Use this template**
-4. ตั้งชื่อ repo: `edge-ai-team-XX` (XX = เลขทีม)
-5. **Public** เพื่อให้ครูเข้ามาดูได้
+2. เปิดโฟลเดอร์ `templates/team-repo-template/`
+3. สร้าง repo ใหม่ใน account ของทีมชื่อ `edge-ai-team-XX` (XX = เลขทีม)
+4. คัดลอกไฟล์จาก template ไปใส่ repo ทีม
+5. ตั้ง repo เป็น **Public** เพื่อให้เพื่อนร่วมทีมและ TA เห็นความคืบหน้าได้
+
+ถ้าครูมี template repo แยกต่างหากอยู่แล้ว ให้ใช้ repo นั้นแทนโฟลเดอร์ template ใน workshop repo นี้
 
 ### Step 5: Clone ลง laptop
 
@@ -111,7 +113,7 @@ git pull
 
 ---
 
-## ✍️ เขียน Commit Message ให้ครูชอบ
+## ✍️ เขียน Commit Message ให้ทีมอ่านแล้วเข้าใจ
 
 นี่คือส่วนสำคัญที่สุดของหัวข้อ **Debug & Explain** (5 คะแนน)
 
@@ -253,7 +255,7 @@ git blame <file>
 ## 🎯 สิ่งที่ทีมคุณต้องทำใน Workshop
 
 - [ ] ทุกคนมี GitHub account
-- [ ] Fork repo template
+- [ ] สร้าง repo ทีมจาก template
 - [ ] ทุกคน commit อย่างน้อย 3 ครั้ง
 - [ ] อย่างน้อย 1 Pull Request ที่ทีมรีวิวกัน
 - [ ] Commit message ตาม format

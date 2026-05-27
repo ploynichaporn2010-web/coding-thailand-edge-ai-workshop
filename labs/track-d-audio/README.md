@@ -7,6 +7,8 @@
 > **Output:** Modulino Pixels + Buzzer + LED Matrix
 > **Difficulty:** ⭐⭐⭐ Advanced (sensitive to noise)
 
+ใช้ไฟล์นี้เป็นคู่มือทำ Track D แบบระวังเรื่องเสียงรบกวนเป็นพิเศษ: ถ้า data ชุดแรก noisy เกินไป V1 จะเพี้ยนทั้งก้อนและเสียเวลา iterate มาก
+
 ---
 
 ## 🎓 ทำไมเลือก Track D
@@ -16,6 +18,8 @@
 - ✅ Real-world applications เยอะ (medical, industrial)
 
 ⚠️ **ต้องมี:** USB Microphone — เช็คก่อนเลือก track นี้
+
+ถ้าทีมยังไม่มี mic หรือหามุมเงียบไม่ได้จริง Track นี้จะเสี่ยงกว่าที่เห็นใน description
 
 ---
 
@@ -36,6 +40,12 @@
 ---
 
 ## 🛠️ Lab Steps
+
+## ✅ ก่อนเริ่ม track นี้ ทีมควรมี
+
+- repo ทีมพร้อมใช้งานและมี commit แรกแล้ว
+- W1 ที่ class แยกกันด้วย pattern เสียงจริง ไม่ใช่คำอธิบายกว้างเกินไป
+- แผนคร่าว ๆ ว่าจะเก็บ background/noise class ยังไง
 
 ### Step 1: Hardware Setup (10 นาที)
 
@@ -63,6 +73,8 @@ aplay test.wav          # ฟัง
 2. ตั้งชื่อ `team-XX-audio`
 3. Target = **Arduino UNO Q**
 4. Project info → Input = **Audio**
+
+จบ step นี้แล้ว ทีมควรพร้อมเริ่มเก็บเสียงจาก device ที่เลือกโดยไม่ต้องกลับมาแก้ project setting ใหม่
 
 ---
 
@@ -101,6 +113,8 @@ edge-impulse-linux
 
 💡 **Class "Background" สำคัญมาก** — ป้องกัน false positive
 
+ถ้าไม่มี background class หรือมีน้อยเกินไป model จะพยายามยัดทุกเสียงให้เป็นหนึ่งใน class หลักของทีม
+
 ---
 
 ### Step 4: Create Impulse (10 นาที)
@@ -125,6 +139,8 @@ edge-impulse-linux
 
 ⚠️ Audio model ต้องการ epochs เยอะกว่า (100 vs 30 ของ motion)
 
+เป้าหมายของ V1 คือดูว่าเสียงแต่ละ class แยกกันได้ในสภาพห้องจริงหรือไม่ ไม่ใช่ดู train accuracy อย่างเดียว
+
 ---
 
 ### Step 5: Validate (5 นาที)
@@ -132,6 +148,8 @@ edge-impulse-linux
 ดู Confusion Matrix + **F1 score**
 - F1 สำคัญกว่า accuracy สำหรับ audio (เพราะ background เยอะ)
 - ถ้า background class ขโมย sample อื่น → เพิ่ม sample class อื่น
+
+ถ้าค่า F1 ต่ำแต่ accuracy ดูดี ให้เชื่อ F1 ก่อน โดยเฉพาะเวลามี background class เยอะ
 
 ---
 
@@ -180,6 +198,8 @@ edge-impulse-linux-runner
 2. ถ้า false positive จาก noise → เพิ่ม background class
 3. ลอง MFCC แทน MFE (สำหรับ keyword spotting)
 4. Re-train V2
+
+การ iterate ของ audio มักได้ผลจากการเก็บเสียงเพิ่มในสภาพแวดล้อมจริง มากกว่าการปรับ parameter อย่างเดียว
 
 ---
 
